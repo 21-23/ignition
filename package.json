@@ -1,0 +1,16 @@
+{
+  "name": "ignition",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:games4nerds/ignition.git",
+  "author": "games4nerds",
+  "license": "LGPLv3.0",
+  "scripts": {
+    "start": "node ./app/ignition.js"
+  },
+  "dependencies": {
+    "message-factory": "games4nerds/message-factory",
+    "phoenix": "games4nerds/phoenix",
+    "uws": "^0.14.0"
+  }
+}
