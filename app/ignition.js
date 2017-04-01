@@ -2,7 +2,7 @@ const WebSocketClient = require('uws');
 const createPhoenix = require('phoenix');
 const { protocol: {frontService, stateService}, parseMessage, arnaux } = require('message-factory');
 
-const phoenix = createPhoenix(WebSocketClient, { uri: 'ws://localhost:3000', timeout: 500 });
+const phoenix = createPhoenix(WebSocketClient, { uri: 'ws://messenger:3000', timeout: 500 });
 
 const puzzles = require('../data/puzzles.json');
 const users = require('../data/qd-masters.json');
