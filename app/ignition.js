@@ -13,7 +13,7 @@ const participantIds = [];
 function createSessions () {
     if (puzzleIds.length === puzzles.length && participantIds.length === users.length) {
         participantIds.forEach(participantId => {
-            phoenix.send(stateService.sessionCreate(participantId, puzzles));
+            phoenix.send(stateService.sessionCreate(participantId, puzzleIds));
         });
     }
 }
