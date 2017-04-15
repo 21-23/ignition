@@ -10,10 +10,13 @@ const users = require('../data/qd-masters.json');
 const puzzleIds = [];
 const participantIds = [];
 
+const sessionAliasSuffixes = ['dq', 'kk', 'ms'];
+
 function createSessions () {
     if (puzzleIds.length === puzzles.length && participantIds.length === users.length) {
-        participantIds.forEach(participantId => {
-            phoenix.send(stateService.sessionCreate(participantId, puzzleIds));
+        participantIds.forEach((participantId, index) => {
+            const alias = `_qd-dev-${sessionAliasSuffixes[index]}`;
+            phoenix.send(stateService.sessionCreate(participantId, alias, puzzleIds));
         });
     }
 }
