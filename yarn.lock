@@ -2,13 +2,13 @@
 # yarn lockfile v1
 
 
-message-factory@games4nerds/message-factory:
-  version "2.7.0"
-  resolved "https://codeload.github.com/games4nerds/message-factory/tar.gz/7901de0c5c402a37e0f72d275c678d3ddc1d317c"
+message-factory@21-23/message-factory:
+  version "5.1.2"
+  resolved "https://codeload.github.com/21-23/message-factory/tar.gz/8120aec3e0b9a64af6072bf31f2f7fa19bb6d120"
 
-phoenix@games4nerds/phoenix:
+phoenix@21-23/phoenix:
   version "2.1.0"
-  resolved "https://codeload.github.com/games4nerds/phoenix/tar.gz/b7f9d9ccf5ea9c6fd213ebe8e3d65ca9eb04620c"
+  resolved "https://codeload.github.com/21-23/phoenix/tar.gz/03323aae3a9f7a237cbf538132190aca06872761"
 
 uws@^0.14.0:
   version "0.14.1"

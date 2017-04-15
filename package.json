@@ -9,8 +9,8 @@
     "start": "node ./app/ignition.js"
   },
   "dependencies": {
-    "message-factory": "games4nerds/message-factory",
-    "phoenix": "games4nerds/phoenix",
+    "message-factory": "21-23/message-factory",
+    "phoenix": "21-23/phoenix",
     "uws": "^0.14.0"
   }
 }
