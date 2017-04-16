@@ -5,6 +5,7 @@
   "repository": "git@github.com:games4nerds/ignition.git",
   "author": "games4nerds",
   "license": "LGPLv3.0",
+  "private": true,
   "scripts": {
     "start": "node ./app/ignition.js"
   },
