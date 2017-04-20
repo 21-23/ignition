@@ -18,6 +18,9 @@ function createSessions () {
             const alias = `_qd-dev-${sessionAliasSuffixes[index]}`;
             phoenix.send(stateService.sessionCreate(participantId, alias, puzzleIds));
         });
+
+        phoenix.send(stateService.sessionCreate(participantIds[2], 'rs-school', puzzleIds.slice(1)));
+        phoenix.send(stateService.sessionCreate(participantIds[2], 'rs-school-demo', puzzleIds[0]));
     }
 }
 
