@@ -21,6 +21,9 @@ function createSessions () {
 
         phoenix.send(stateService.sessionCreate(participantIds[2], 'rs-school', puzzleIds.slice(1)));
         phoenix.send(stateService.sessionCreate(participantIds[2], 'rs-school-demo', [puzzleIds[0]]));
+
+        phoenix.send(stateService.sessionCreate(participantIds[0], 'rs-gdansk', puzzleIds.slice(1)));
+        phoenix.send(stateService.sessionCreate(participantIds[0], 'rs-gdansk-demo', [puzzleIds[0]]));
     }
 }
 
