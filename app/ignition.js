@@ -10,7 +10,7 @@ const users = require('../data/qd-masters.json');
 const puzzleIds = [];
 const participantIds = [];
 
-const sessionAliasSuffixes = ['dq', 'kk', 'ms'];
+const sessionAliasSuffixes = ['dq', 'kk', 'ms', 'av'];
 
 function createSessions () {
     if (puzzleIds.length === puzzles.length && participantIds.length === users.length) {
