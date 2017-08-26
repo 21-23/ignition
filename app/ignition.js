@@ -20,6 +20,8 @@ function createSessions() {
 
     phoenix.send(stateService.sessionCreate(participantIds[0], 'rs.krakow', puzzleIds.slice(1)));
     phoenix.send(stateService.sessionCreate(participantIds[0], 'rs.krakow-demo', [puzzleIds[0]]));
+    phoenix.send(stateService.sessionCreate(participantIds[0], 'lvivjs', puzzleIds.slice(1)));
+    phoenix.send(stateService.sessionCreate(participantIds[0], 'lvivjs-demo', [puzzleIds[0]]));
 }
 
 function createPuzzles(puzzles) {
