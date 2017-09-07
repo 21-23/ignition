@@ -10,7 +10,7 @@ const users = require('../data/qd-masters.json');
 const puzzleIds = [];
 const participantIds = [];
 
-const sessionAliasSuffixes = ['dq', 'kk', 'ms', 'av']; // order here MUST be the same as in ../data/qd-masters.json
+const sessionAliasSuffixes = ['dq', 'kk', 'ms', 'av', 'ay']; // order here MUST be the same as in ../data/qd-masters.json
 
 function createSessions() {
     participantIds.forEach((participantId, index) => {
