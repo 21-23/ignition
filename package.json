@@ -7,7 +7,8 @@
   "license": "LGPLv3.0",
   "private": true,
   "scripts": {
-    "start": "node ./app/ignition.js"
+    "start": "node ./app/ignition.js",
+    "debug": "node --inspect-brk ./app/ignition.js"
   },
   "dependencies": {
     "message-factory": "github:21-23/message-factory#v5.2.3",

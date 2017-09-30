@@ -4,27 +4,36 @@ const { protocol: {frontService, stateService}, parseMessage, arnaux } = require
 
 const phoenix = createPhoenix(WebSocketClient, { uri: 'ws://messenger:3000', timeout: 500 });
 
-const puzzles = require('../data/puzzles.json');
-const users = require('../data/qd-masters.json');
+const _qdPuzzles = require('../data/_qd-puzzles.json');
+const cssqdPuzzles = require('../data/cssqd-puzzles.json');
+const users = require('../data/masters.json');
 
-const puzzleIds = [];
+const _qdPuzzleIds = [];
+const cssqdPuzzleIds = [];
 const participantIds = [];
 
-const sessionAliasSuffixes = ['dq', 'kk', 'ms', 'av', 'ay']; // order here MUST be the same as in ../data/qd-masters.json
+const sessionAliasSuffixes = ['dq', 'kk', 'ms', 'av', 'ay']; // order here MUST be the same as in ../data/masters.json
 
 function createSessions() {
     participantIds.forEach((participantId, index) => {
-        const alias = `_qd-dev-${sessionAliasSuffixes[index]}`;
-        phoenix.send(stateService.sessionCreate(participantId, alias, puzzleIds));
+        const _qdAlias = `_qd-dev-${sessionAliasSuffixes[index]}`;
+        const cssqdAlias = `cssqd-dev-${sessionAliasSuffixes[index]}`;
+        phoenix.send(stateService.sessionCreate(participantId, _qdAlias, _qdPuzzleIds));
+        phoenix.send(stateService.sessionCreate(participantId, cssqdAlias, cssqdPuzzleIds));
     });
 
-    phoenix.send(stateService.sessionCreate(participantIds[0], 'rs.krakow', puzzleIds.slice(1)));
-    phoenix.send(stateService.sessionCreate(participantIds[0], 'rs.krakow-demo', [puzzleIds[0]]));
-    phoenix.send(stateService.sessionCreate(participantIds[0], 'lvivjs', puzzleIds.slice(1)));
-    phoenix.send(stateService.sessionCreate(participantIds[0], 'lvivjs-demo', [puzzleIds[0]]));
+    phoenix.send(stateService.sessionCreate(participantIds[0], 'rs.krakow', _qdPuzzleIds.slice(1)));
+    phoenix.send(stateService.sessionCreate(participantIds[0], 'rs.krakow-demo', [_qdPuzzleIds[0]]));
+    phoenix.send(stateService.sessionCreate(participantIds[0], 'lvivjs', _qdPuzzleIds.slice(1)));
+    phoenix.send(stateService.sessionCreate(participantIds[0], 'lvivjs-demo', [_qdPuzzleIds[0]]));
+
+    phoenix.send(stateService.sessionCreate(participantIds[0], 'rs.krakow', cssqdPuzzleIds.slice(1)));
+    phoenix.send(stateService.sessionCreate(participantIds[0], 'rs.krakow-demo', [cssqdPuzzleIds[0]]));
+    phoenix.send(stateService.sessionCreate(participantIds[0], 'lvivjs', cssqdPuzzleIds.slice(1)));
+    phoenix.send(stateService.sessionCreate(participantIds[0], 'lvivjs-demo', [cssqdPuzzleIds[0]]));
 }
 
-function createPuzzles(puzzles) {
+function createPuzzles(puzzles, puzzleIds) {
     return new Promise((resolve) => {
         function onPuzzleCreated(incomingMessage) {
             const { message } = parseMessage(incomingMessage.data);
@@ -96,7 +105,10 @@ phoenix
         console.log('[init-service]', 'phoenix is alive');
         phoenix.send(arnaux.checkin('init-service'));
 
-        createPuzzles(puzzles)
+        createPuzzles(_qdPuzzles, _qdPuzzleIds)
+            .then(() => {
+                return createPuzzles(cssqdPuzzles, cssqdPuzzleIds);
+            })
             .then(() => {
                 return createParticipants(users);
             })
