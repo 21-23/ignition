@@ -18,19 +18,19 @@ function createSessions() {
     participantIds.forEach((participantId, index) => {
         const _qdAlias = `_qd-dev-${sessionAliasSuffixes[index]}`;
         const cssqdAlias = `cssqd-dev-${sessionAliasSuffixes[index]}`;
-        phoenix.send(stateService.sessionCreate(participantId, _qdAlias, _qdPuzzleIds));
-        phoenix.send(stateService.sessionCreate(participantId, cssqdAlias, cssqdPuzzleIds));
+        phoenix.send(stateService.sessionCreate('_qd', participantId, _qdAlias, _qdPuzzleIds));
+        phoenix.send(stateService.sessionCreate('cssqd', participantId, cssqdAlias, cssqdPuzzleIds));
     });
 
-    phoenix.send(stateService.sessionCreate(participantIds[0], 'rs.krakow', _qdPuzzleIds.slice(1)));
-    phoenix.send(stateService.sessionCreate(participantIds[0], 'rs.krakow-demo', [_qdPuzzleIds[0]]));
-    phoenix.send(stateService.sessionCreate(participantIds[0], 'lvivjs', _qdPuzzleIds.slice(1)));
-    phoenix.send(stateService.sessionCreate(participantIds[0], 'lvivjs-demo', [_qdPuzzleIds[0]]));
+    phoenix.send(stateService.sessionCreate('_qd', participantIds[0], 'rs.krakow', _qdPuzzleIds.slice(1)));
+    phoenix.send(stateService.sessionCreate('_qd', participantIds[0], 'rs.krakow-demo', [_qdPuzzleIds[0]]));
+    phoenix.send(stateService.sessionCreate('_qd', participantIds[0], 'lvivjs', _qdPuzzleIds.slice(1)));
+    phoenix.send(stateService.sessionCreate('_qd', participantIds[0], 'lvivjs-demo', [_qdPuzzleIds[0]]));
 
-    phoenix.send(stateService.sessionCreate(participantIds[0], 'rs.krakow', cssqdPuzzleIds.slice(1)));
-    phoenix.send(stateService.sessionCreate(participantIds[0], 'rs.krakow-demo', [cssqdPuzzleIds[0]]));
-    phoenix.send(stateService.sessionCreate(participantIds[0], 'lvivjs', cssqdPuzzleIds.slice(1)));
-    phoenix.send(stateService.sessionCreate(participantIds[0], 'lvivjs-demo', [cssqdPuzzleIds[0]]));
+    phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'rs.krakow', cssqdPuzzleIds.slice(1)));
+    phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'rs.krakow-demo', [cssqdPuzzleIds[0]]));
+    phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'lvivjs', cssqdPuzzleIds.slice(1)));
+    phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'lvivjs-demo', [cssqdPuzzleIds[0]]));
 }
 
 function createPuzzles(puzzles, puzzleIds) {
