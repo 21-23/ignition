@@ -12,7 +12,7 @@ const _qdPuzzleIds = [];
 const cssqdPuzzleIds = [];
 const participantIds = [];
 
-const sessionAliasSuffixes = ['dq', 'kk', 'ms', 'av', 'ay']; // order here MUST be the same as in ../data/masters.json
+const sessionAliasSuffixes = ['dq', 'kk', 'ms', 'av', 'ay', 'uh']; // order here MUST be the same as in ../data/masters.json
 
 function createSessions() {
     participantIds.forEach((participantId, index) => {
@@ -33,8 +33,8 @@ function createSessions() {
     phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'rs.krakow-demo', [cssqdPuzzleIds[0]]));
     phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'lvivjs', cssqdPuzzleIds.slice(1)));
     phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'lvivjs-demo', [cssqdPuzzleIds[0]]));
-    phoenix.send(stateService.sessionCreate('cssqd', participantIds[3], 'rsschool', cssqdPuzzleIds.slice(1)));
-    phoenix.send(stateService.sessionCreate('cssqd', participantIds[3], 'rsschool-demo', [cssqdPuzzleIds[0]]));
+    phoenix.send(stateService.sessionCreate('cssqd', participantIds[5], 'rsschool', cssqdPuzzleIds.slice(1)));
+    phoenix.send(stateService.sessionCreate('cssqd', participantIds[5], 'rsschool-demo', [cssqdPuzzleIds[0]]));
     phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'webzurich', cssqdPuzzleIds.slice(1)));
     phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'webzurich-demo', [cssqdPuzzleIds[0]]));
     phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'rs.gdansk', cssqdPuzzleIds.slice(1)));
