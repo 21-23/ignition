@@ -26,8 +26,8 @@ function createSessions() {
     phoenix.send(stateService.sessionCreate('_qd', participantIds[0], 'rs.krakow-demo', [_qdPuzzleIds[0]]));
     phoenix.send(stateService.sessionCreate('_qd', participantIds[0], 'lvivjs', _qdPuzzleIds.slice(1)));
     phoenix.send(stateService.sessionCreate('_qd', participantIds[0], 'lvivjs-demo', [_qdPuzzleIds[0]]));
-    phoenix.send(stateService.sessionCreate('_qd', participantIds[2], 'rsschool', _qdPuzzleIds.slice(1)));
-    phoenix.send(stateService.sessionCreate('_qd', participantIds[2], 'rsschool-demo', [_qdPuzzleIds[0]]));
+    phoenix.send(stateService.sessionCreate('_qd', participantIds[3], 'rsschool', _qdPuzzleIds.slice(1)));
+    phoenix.send(stateService.sessionCreate('_qd', participantIds[3], 'rsschool-demo', [_qdPuzzleIds[0]]));
 
     phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'rs.krakow', cssqdPuzzleIds.slice(1)));
     phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'rs.krakow-demo', [cssqdPuzzleIds[0]]));
@@ -41,6 +41,10 @@ function createSessions() {
     phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'rs.gdansk-demo', [cssqdPuzzleIds[0]]));
     phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'mozilla', cssqdPuzzleIds.slice(1)));
     phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'mozilla-demo', [cssqdPuzzleIds[0]]));
+    phoenix.send(stateService.sessionCreate('cssqd', participantIds[2], 'rit', cssqdPuzzleIds.slice(1)));
+    phoenix.send(stateService.sessionCreate('cssqd', participantIds[2], 'rit-demo', [cssqdPuzzleIds[0]]));
+    phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'madrid', cssqdPuzzleIds.slice(1)));
+    phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'madrid-demo', [cssqdPuzzleIds[0]]));
 }
 
 function createPuzzles(puzzles, puzzleIds) {
