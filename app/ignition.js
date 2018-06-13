@@ -12,7 +12,7 @@ const _qdPuzzleIds = [];
 const cssqdPuzzleIds = [];
 const participantIds = [];
 
-const sessionAliasSuffixes = ['dq', 'kk', 'ms', 'av', 'ay', 'uh']; // order here MUST be the same as in ../data/masters.json
+const sessionAliasSuffixes = ['dq', 'kk', 'ms', 'av', 'ay', 'uh', 'ak']; // order here MUST be the same as in ../data/masters.json
 
 function createSessions() {
     participantIds.forEach((participantId, index) => {
