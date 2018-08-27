@@ -28,6 +28,8 @@ function createSessions() {
     phoenix.send(stateService.sessionCreate('_qd', participantIds[0], 'lvivjs-demo', [_qdPuzzleIds[0]]));
     phoenix.send(stateService.sessionCreate('_qd', participantIds[3], 'rsschool', _qdPuzzleIds.slice(1)));
     phoenix.send(stateService.sessionCreate('_qd', participantIds[3], 'rsschool-demo', [_qdPuzzleIds[0]]));
+    phoenix.send(stateService.sessionCreate('_qd', participantIds[0], 'webzurich', _qdPuzzleIds.slice(1)));
+    phoenix.send(stateService.sessionCreate('_qd', participantIds[0], 'webzurich-demo', [_qdPuzzleIds[0]]));
 
     phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'rs.krakow', cssqdPuzzleIds.slice(1)));
     phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'rs.krakow-demo', [cssqdPuzzleIds[0]]));
