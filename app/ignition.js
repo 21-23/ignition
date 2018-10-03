@@ -6,10 +6,13 @@ const phoenix = createPhoenix(WebSocketClient, { uri: 'ws://messenger:3000', tim
 
 const _qdPuzzles = require('../data/_qd-puzzles.json');
 const cssqdPuzzles = require('../data/cssqd-puzzles.json');
+const jsqdPuzzles = require('../data/jsqd-puzzles.json');
 const users = require('../data/masters.json');
 
 const _qdPuzzleIds = [];
 const cssqdPuzzleIds = [];
+const jsqdPuzzleIds = [];
+
 const participantIds = [];
 
 const sessionAliasSuffixes = ['dq', 'kk', 'ms', 'av', 'ay', 'uh', 'ak']; // order here MUST be the same as in ../data/masters.json
@@ -18,8 +21,10 @@ function createSessions() {
     participantIds.forEach((participantId, index) => {
         const _qdAlias = `_qd-dev-${sessionAliasSuffixes[index]}`;
         const cssqdAlias = `cssqd-dev-${sessionAliasSuffixes[index]}`;
+        const jsqdAlias = `jsqd-dev-${sessionAliasSuffixes[index]}`;
         phoenix.send(stateService.sessionCreate('_qd', participantId, _qdAlias, _qdPuzzleIds));
         phoenix.send(stateService.sessionCreate('cssqd', participantId, cssqdAlias, cssqdPuzzleIds));
+        phoenix.send(stateService.sessionCreate('jsqd', participantId, jsqdAlias, jsqdPuzzleIds));
     });
 
     phoenix.send(stateService.sessionCreate('_qd', participantIds[0], 'rs.krakow', _qdPuzzleIds.slice(1)));
@@ -47,6 +52,9 @@ function createSessions() {
     phoenix.send(stateService.sessionCreate('cssqd', participantIds[2], 'rit-demo', [cssqdPuzzleIds[0]]));
     phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'madrid', cssqdPuzzleIds.slice(1)));
     phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'madrid-demo', [cssqdPuzzleIds[0]]));
+
+    phoenix.send(stateService.sessionCreate('jsqd', participantIds[0], 'rsschool', cssqdPuzzleIds.slice(1)));
+    phoenix.send(stateService.sessionCreate('jsqd', participantIds[0], 'rschool-demo', [cssqdPuzzleIds[0]]));
 }
 
 function createPuzzles(puzzles, puzzleIds) {
@@ -124,6 +132,9 @@ phoenix
         createPuzzles(_qdPuzzles, _qdPuzzleIds)
             .then(() => {
                 return createPuzzles(cssqdPuzzles, cssqdPuzzleIds);
+            })
+            .then(() => {
+                return createPuzzles(jsqdPuzzles, jsqdPuzzleIds);
             })
             .then(() => {
                 return createParticipants(users);
