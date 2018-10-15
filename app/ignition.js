@@ -31,8 +31,8 @@ function createSessions() {
     phoenix.send(stateService.sessionCreate('_qd', participantIds[0], 'rs.krakow-demo', [_qdPuzzleIds[0]]));
     phoenix.send(stateService.sessionCreate('_qd', participantIds[0], 'lvivjs', _qdPuzzleIds.slice(1)));
     phoenix.send(stateService.sessionCreate('_qd', participantIds[0], 'lvivjs-demo', [_qdPuzzleIds[0]]));
-    phoenix.send(stateService.sessionCreate('_qd', participantIds[3], 'rsschool', _qdPuzzleIds.slice(1)));
-    phoenix.send(stateService.sessionCreate('_qd', participantIds[3], 'rsschool-demo', [_qdPuzzleIds[0]]));
+    // phoenix.send(stateService.sessionCreate('_qd', participantIds[3], 'rsschool', _qdPuzzleIds.slice(1)));
+    // phoenix.send(stateService.sessionCreate('_qd', participantIds[3], 'rsschool-demo', [_qdPuzzleIds[0]]));
     phoenix.send(stateService.sessionCreate('_qd', participantIds[0], 'webzurich', _qdPuzzleIds.slice(1)));
     phoenix.send(stateService.sessionCreate('_qd', participantIds[0], 'webzurich-demo', [_qdPuzzleIds[0]]));
 
@@ -40,8 +40,8 @@ function createSessions() {
     phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'rs.krakow-demo', [cssqdPuzzleIds[0]]));
     phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'lvivjs', cssqdPuzzleIds.slice(1)));
     phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'lvivjs-demo', [cssqdPuzzleIds[0]]));
-    phoenix.send(stateService.sessionCreate('cssqd', participantIds[5], 'rsschool', cssqdPuzzleIds.slice(1)));
-    phoenix.send(stateService.sessionCreate('cssqd', participantIds[5], 'rsschool-demo', [cssqdPuzzleIds[0]]));
+    // phoenix.send(stateService.sessionCreate('cssqd', participantIds[5], 'rsschool', cssqdPuzzleIds.slice(1)));
+    // phoenix.send(stateService.sessionCreate('cssqd', participantIds[5], 'rsschool-demo', [cssqdPuzzleIds[0]]));
     phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'webzurich', cssqdPuzzleIds.slice(1)));
     phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'webzurich-demo', [cssqdPuzzleIds[0]]));
     phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'rs.gdansk', cssqdPuzzleIds.slice(1)));
