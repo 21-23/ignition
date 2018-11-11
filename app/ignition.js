@@ -52,7 +52,7 @@ function createSessions() {
     phoenix.send(stateService.sessionCreate('cssqd', participantIds[2], 'rit-demo', [cssqdPuzzleIds[0]]));
     phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'madrid', cssqdPuzzleIds.slice(1)));
     phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'madrid-demo', [cssqdPuzzleIds[0]]));
-    phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'dachfest', [cssqdPuzzleIds.slice(0, -1)]));
+    phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'dachfest', cssqdPuzzleIds.slice(0, -1)));
     phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'dachfest-demo', [cssqdPuzzleIds[0]]));
 
     phoenix.send(stateService.sessionCreate('jsqd', participantIds[0], 'rsschool', jsqdPuzzleIds.slice(1)));
