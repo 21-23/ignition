@@ -56,7 +56,7 @@ function createSessions() {
     phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'dachfest-demo', [cssqdPuzzleIds[0]]));
 
     phoenix.send(stateService.sessionCreate('jsqd', participantIds[0], 'rsschool', jsqdPuzzleIds.slice(1)));
-    phoenix.send(stateService.sessionCreate('jsqd', participantIds[0], 'rschool-demo', [jsqdPuzzleIds[0]]));
+    phoenix.send(stateService.sessionCreate('jsqd', participantIds[0], 'rsschool-demo', [jsqdPuzzleIds[0]]));
 }
 
 function createPuzzles(puzzles, puzzleIds) {
