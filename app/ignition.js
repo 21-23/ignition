@@ -7,15 +7,17 @@ const phoenix = createPhoenix(WebSocketClient, { uri: 'ws://messenger:3000', tim
 const _qdPuzzles = require('../data/_qd-puzzles.json');
 const cssqdPuzzles = require('../data/cssqd-puzzles.json');
 const jsqdPuzzles = require('../data/jsqd-puzzles.json');
+const jsDevDayJsqdPuzzles = require('../data/jsdevday-jsqd-puzzles.json');
 const users = require('../data/masters.json');
 
 const _qdPuzzleIds = [];
 const cssqdPuzzleIds = [];
 const jsqdPuzzleIds = [];
+const jsDevDayJsqdPuzzleIds = [];
 
 const participantIds = [];
 
-const sessionAliasSuffixes = ['dq', 'kk', 'ms', 'av', 'ay', 'uh', 'ak']; // order here MUST be the same as in ../data/masters.json
+const sessionAliasSuffixes = ['dq', 'kk', 'ms', 'av', 'ay', 'uh', 'ak', 'ab']; // order here MUST be the same as in ../data/masters.json
 
 function createSessions() {
     participantIds.forEach((participantId, index) => {
@@ -61,6 +63,12 @@ function createSessions() {
 
     phoenix.send(stateService.sessionCreate('jsqd', participantIds[0], 'rsschool', jsqdPuzzleIds.slice(1), 200));
     phoenix.send(stateService.sessionCreate('jsqd', participantIds[0], 'rsschool-demo', [jsqdPuzzleIds[0]], 200));
+
+    phoenix.send(stateService.sessionCreate('jsqd', participantIds[0], 'js-dev-day-dq', jsDevDayJsqdPuzzleIds.slice(1), 200));
+    phoenix.send(stateService.sessionCreate('jsqd', participantIds[0], 'js-dev-day-demo-dq', [jsDevDayJsqdPuzzleIds[0]], 200));
+
+    phoenix.send(stateService.sessionCreate('jsqd', participantIds[7], 'js-dev-day-ab', jsDevDayJsqdPuzzleIds.slice(1), 200));
+    phoenix.send(stateService.sessionCreate('jsqd', participantIds[7], 'js-dev-day-demo-ab', [jsDevDayJsqdPuzzleIds[0]], 200));
 }
 
 function createPuzzles(puzzles, puzzleIds) {
@@ -141,6 +149,9 @@ phoenix
             })
             .then(() => {
                 return createPuzzles(jsqdPuzzles, jsqdPuzzleIds);
+            })
+            .then(() => {
+                return createPuzzles(jsDevDayJsqdPuzzles, jsDevDayJsqdPuzzleIds);
             })
             .then(() => {
                 return createParticipants(users);
