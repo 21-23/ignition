@@ -17,7 +17,7 @@ const jsDevDayJsqdPuzzleIds = [];
 
 const participantIds = [];
 
-const sessionAliasSuffixes = ['dq', 'kk', 'ms', 'av', 'ay', 'uh', 'ak', 'ab']; // order here MUST be the same as in ../data/masters.json
+const sessionAliasSuffixes = ['dq', 'kk', 'ms', 'av', 'ay', 'uh', 'ak', 'ab', 'ra']; // order here MUST be the same as in ../data/masters.json
 
 function createSessions() {
     participantIds.forEach((participantId, index) => {
