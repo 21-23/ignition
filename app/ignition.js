@@ -17,7 +17,7 @@ const jsDevDayJsqdPuzzleIds = [];
 
 const participantIds = [];
 
-const sessionAliasSuffixes = ['dq', 'kk', 'ms', 'av', 'ay', 'uh', 'ak', 'ab', 'ra']; // order here MUST be the same as in ../data/masters.json
+const sessionAliasSuffixes = ['dq', 'kk', 'ms', 'av', 'ay', 'uh', 'ak', 'ab', 'ra', 'op']; // order here MUST be the same as in ../data/masters.json
 
 function createSessions() {
     participantIds.forEach((participantId, index) => {
@@ -58,7 +58,8 @@ function createSessions() {
     phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'dachfest-demo', [cssqdPuzzleIds[0]], 9000));
     phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'codemotion', cssqdPuzzleIds.slice(0, -1), 9000));
     phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'codemotion-demo', [cssqdPuzzleIds[0]], 9000));
-    phoenix.send(stateService.sessionCreate('cssqd', participantIds[7], 'js-dev-day', cssqdPuzzleIds.slice(0, -1), 200));
+    phoenix.send(stateService.sessionCreate('cssqd', participantIds[8], 'js-dev-day', cssqdPuzzleIds.slice(0, -1), 200));
+    phoenix.send(stateService.sessionCreate('cssqd', participantIds[9], 'js-dev-day-en', cssqdPuzzleIds.slice(0, -1), 200));
 
     phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'plimit-test', cssqdPuzzleIds.slice(0, -1), 2));
     phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'same-alias-test', cssqdPuzzleIds.slice(0, -1), 200));
@@ -73,6 +74,9 @@ function createSessions() {
 
     phoenix.send(stateService.sessionCreate('jsqd', participantIds[8], 'js-dev-day', jsDevDayJsqdPuzzleIds, 150));
     phoenix.send(stateService.sessionCreate('jsqd', participantIds[8], 'js-dev-day-demo', [jsDevDayJsqdPuzzleIds[0]], 150));
+
+    phoenix.send(stateService.sessionCreate('jsqd', participantIds[9], 'js-dev-day-en', jsDevDayJsqdPuzzleIds, 150));
+    phoenix.send(stateService.sessionCreate('jsqd', participantIds[9], 'js-dev-day-demo-en', [jsDevDayJsqdPuzzleIds[0]], 150));
 }
 
 function createPuzzles(puzzles, puzzleIds) {
