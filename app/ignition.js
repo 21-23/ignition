@@ -59,10 +59,6 @@ function createSessions() {
     phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'codemotion', cssqdPuzzleIds.slice(0, -1), 9000));
     phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'codemotion-demo', [cssqdPuzzleIds[0]], 9000));
 
-    phoenix.send(stateService.sessionCreate('cssqd', participantIds[11], 'js-dev-day', cssqdPuzzleIds.slice(0, -1), 200));
-    phoenix.send(stateService.sessionCreate('cssqd', participantIds[9], 'js-dev-day-en', cssqdPuzzleIds.slice(0, -1), 200));
-    phoenix.send(stateService.sessionCreate('cssqd', participantIds[10], 'js-dev-day-mb', cssqdPuzzleIds.slice(0, -1), 200));
-
     phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'plimit-test', cssqdPuzzleIds.slice(0, -1), 2));
     phoenix.send(stateService.sessionCreate('cssqd', participantIds[0], 'same-alias-test', cssqdPuzzleIds.slice(0, -1), 200));
 
@@ -74,8 +70,8 @@ function createSessions() {
 
     phoenix.send(stateService.sessionCreate('jsqd', participantIds[0], 'same-alias-test', jsDevDayJsqdPuzzleIds, 200));
 
-    phoenix.send(stateService.sessionCreate('jsqd', participantIds[7], 'js-dev-day', jsDevDayJsqdPuzzleIds, 150));
-    phoenix.send(stateService.sessionCreate('jsqd', participantIds[7], 'js-dev-day-demo', [jsDevDayJsqdPuzzleIds[0]], 150));
+    phoenix.send(stateService.sessionCreate('jsqd', participantIds[11], 'js-quiz', jsDevDayJsqdPuzzleIds, 200));
+    phoenix.send(stateService.sessionCreate('jsqd', participantIds[11], 'js-quiz-demo', [jsDevDayJsqdPuzzleIds[0]], 200));
 }
 
 function createPuzzles(puzzles, puzzleIds) {
